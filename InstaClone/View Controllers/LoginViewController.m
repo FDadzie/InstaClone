@@ -6,15 +6,15 @@
 //  Copyright © 2020 fdadzie20. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "LoginViewController.h"
 #import <Parse/Parse.h>
 
 
-@interface ViewController ()
+@interface LoginViewController ()
 
 @end
 
-@implementation ViewController
+@implementation LoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

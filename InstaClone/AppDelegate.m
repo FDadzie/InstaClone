@@ -18,11 +18,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    /*
     ParseClientConfiguration *configuration = [ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
       configuration.applicationId = @"instagramClone";
       configuration.server = @"https://frank-fbu-instagram.herokuapp.com/parse";
     }];
     [Parse initializeWithConfiguration:configuration];
+    */
+    
     /*
     PFObject *gameScore = [PFObject objectWithClassName:@"GameScore"];
     gameScore[@"score"] = @1337;

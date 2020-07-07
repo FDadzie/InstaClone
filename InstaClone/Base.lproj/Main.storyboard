@@ -10,7 +10,7 @@
         <!--LoginViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" title="LoginViewController" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" title="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,22 +64,22 @@
                     <connections>
                         <outlet property="passTextField" destination="G3z-mb-RWh" id="ueX-Xx-MLF"/>
                         <outlet property="userTextField" destination="QeV-r8-uD3" id="gWb-Bh-7k8"/>
-                        <segue destination="n75-wF-zQB" kind="presentation" identifier="showPosts" id="s1F-Ut-5XE"/>
+                        <segue destination="n75-wF-zQB" kind="presentation" identifier="showPosts" modalPresentationStyle="fullScreen" id="s1F-Ut-5XE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1006" y="138"/>
         </scene>
-        <!--Posts-->
+        <!--PostViewController-->
         <scene sceneID="oUu-bA-eSK">
             <objects>
-                <viewController id="7lP-3g-aiZ" customClass="PostViewController" sceneMemberID="viewController">
+                <viewController title="PostViewController" modalPresentationStyle="fullScreen" id="7lP-3g-aiZ" customClass="PostViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U2f-ym-aza">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="jg0-mb-ZXz"/>
+                        <viewLayoutGuide key="safeArea" id="Fm2-VD-Z9F"/>
                     </view>
                     <navigationItem key="navigationItem" title="Posts" id="7ot-hR-6sr">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="QqW-q9-mTN">
@@ -87,11 +87,29 @@
                                 <action selector="didTapLogout:" destination="7lP-3g-aiZ" id="IxC-IO-ItA"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Compose" image="insta_camera_btn" id="Zpd-nf-Xc5"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EEo-01-e60" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2659" y="138"/>
+            <point key="canvasLocation" x="2657.971014492754" y="137.94642857142856"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Kt4-5Q-f45">
+            <objects>
+                <tabBarController id="hKu-x0-UDO" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cv6-UT-5qT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="7lP-3g-aiZ" kind="show" id="Vfi-Yv-LQV"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0eD-gu-JN1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2658" y="-566"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vj5-RB-fzs">
@@ -114,13 +132,16 @@
         <!--Navigation Controller-->
         <scene sceneID="G9P-hf-yKb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n75-wF-zQB" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="PostViewController" automaticallyAdjustsScrollViewInsets="NO" id="n75-wF-zQB" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pA1-IU-89d">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eOb-44-KMo">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="7lP-3g-aiZ" kind="relationship" relationship="rootViewController" id="kuV-Yj-sGD"/>
                     </connections>
@@ -130,6 +151,9 @@
             <point key="canvasLocation" x="1841" y="138"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Vfi-Yv-LQV"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="insta_camera_btn" width="25" height="25"/>
     </resources>
