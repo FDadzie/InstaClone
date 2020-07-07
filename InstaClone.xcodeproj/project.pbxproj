@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,7 @@
 		9E16A40424B3DEB100EAD8A2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E16A40324B3DEB100EAD8A2 /* main.m */; };
 		9E16A40E24B3DEB100EAD8A2 /* InstaCloneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E16A40D24B3DEB100EAD8A2 /* InstaCloneTests.m */; };
 		9E16A41924B3DEB100EAD8A2 /* InstaCloneUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E16A41824B3DEB100EAD8A2 /* InstaCloneUITests.m */; };
+		9E7AA29724B4389800F2DC5F /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E7AA29624B4389800F2DC5F /* PostViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		9E16A41424B3DEB100EAD8A2 /* InstaCloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaCloneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E16A41824B3DEB100EAD8A2 /* InstaCloneUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstaCloneUITests.m; sourceTree = "<group>"; };
 		9E16A41A24B3DEB100EAD8A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E7AA29524B4389800F2DC5F /* PostViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostViewController.h; sourceTree = "<group>"; };
+		9E7AA29624B4389800F2DC5F /* PostViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostViewController.m; sourceTree = "<group>"; };
 		E4CEC939064363C394148CE2 /* Pods-InstaClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.debug.xcconfig"; path = "Target Support Files/Pods-InstaClone/Pods-InstaClone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,7 +109,6 @@
 				9132898DDE2CFE67FEAC7F2D /* Pods-InstaCloneTests.debug.xcconfig */,
 				36C5E25F1A213EA21BC865D2 /* Pods-InstaCloneTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -145,12 +147,11 @@
 		9E16A3F024B3DEB000EAD8A2 /* InstaClone */ = {
 			isa = PBXGroup;
 			children = (
+				9E7AA29424B4354600F2DC5F /* View Controllers */,
 				9E16A3F124B3DEB000EAD8A2 /* AppDelegate.h */,
 				9E16A3F224B3DEB000EAD8A2 /* AppDelegate.m */,
 				9E16A3F424B3DEB000EAD8A2 /* SceneDelegate.h */,
 				9E16A3F524B3DEB000EAD8A2 /* SceneDelegate.m */,
-				9E16A3F724B3DEB000EAD8A2 /* ViewController.h */,
-				9E16A3F824B3DEB000EAD8A2 /* ViewController.m */,
 				9E16A3FA24B3DEB000EAD8A2 /* Main.storyboard */,
 				9E16A3FD24B3DEB100EAD8A2 /* Assets.xcassets */,
 				9E16A3FF24B3DEB100EAD8A2 /* LaunchScreen.storyboard */,
@@ -176,6 +177,17 @@
 				9E16A41A24B3DEB100EAD8A2 /* Info.plist */,
 			);
 			path = InstaCloneUITests;
+			sourceTree = "<group>";
+		};
+		9E7AA29424B4354600F2DC5F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9E16A3F724B3DEB000EAD8A2 /* ViewController.h */,
+				9E16A3F824B3DEB000EAD8A2 /* ViewController.m */,
+				9E7AA29524B4389800F2DC5F /* PostViewController.h */,
+				9E7AA29624B4389800F2DC5F /* PostViewController.m */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,6 +432,7 @@
 				9E16A3F324B3DEB000EAD8A2 /* AppDelegate.m in Sources */,
 				9E16A40424B3DEB100EAD8A2 /* main.m in Sources */,
 				9E16A3F624B3DEB000EAD8A2 /* SceneDelegate.m in Sources */,
+				9E7AA29724B4389800F2DC5F /* PostViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

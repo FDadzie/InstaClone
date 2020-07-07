@@ -23,6 +23,7 @@
       configuration.server = @"https://frank-fbu-instagram.herokuapp.com/parse";
     }];
     [Parse initializeWithConfiguration:configuration];
+    /*
     PFObject *gameScore = [PFObject objectWithClassName:@"GameScore"];
     gameScore[@"score"] = @1337;
     gameScore[@"playerName"] = @"Frank Dadzie";
@@ -34,6 +35,7 @@
          NSLog(@"Error: %@", error.description);
       }
     }];
+     */
     return YES;
 }
 
