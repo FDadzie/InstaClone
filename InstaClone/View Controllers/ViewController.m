@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <Parse/Parse.h>
 
+
 @interface ViewController ()
 
 @end
@@ -39,6 +40,18 @@
 
 
 - (IBAction)onLogin:(id)sender {
+    NSString *username = self.userTextField.text;
+    NSString *password = self.passTextField.text;
+    
+    [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
+        if (error != nil) {
+            NSLog(@"User log in failed: %@", error.localizedDescription);
+        } else {
+            NSLog(@"User logged in successfully");
+            [self performSegueWithIdentifier:@"showPosts" sender:(nil)];
+            // display view controller that needs to shown after successful login
+        }
+    }];
 }
 
 
