@@ -20,6 +20,9 @@
 		9E16A40E24B3DEB100EAD8A2 /* InstaCloneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E16A40D24B3DEB100EAD8A2 /* InstaCloneTests.m */; };
 		9E16A41924B3DEB100EAD8A2 /* InstaCloneUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E16A41824B3DEB100EAD8A2 /* InstaCloneUITests.m */; };
 		9E7AA29724B4389800F2DC5F /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E7AA29624B4389800F2DC5F /* PostViewController.m */; };
+		9E7AA2A224B65E7200F2DC5F /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E7AA2A124B65E7200F2DC5F /* ComposeViewController.m */; };
+		9E7AA2A624B66DBA00F2DC5F /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E7AA2A524B66DBA00F2DC5F /* Post.m */; };
+		9E7AA2AA24B7BDAA00F2DC5F /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E7AA2A924B7BDAA00F2DC5F /* PostCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,12 @@
 		9E16A41A24B3DEB100EAD8A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E7AA29524B4389800F2DC5F /* PostViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostViewController.h; sourceTree = "<group>"; };
 		9E7AA29624B4389800F2DC5F /* PostViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostViewController.m; sourceTree = "<group>"; };
+		9E7AA2A024B65E7200F2DC5F /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
+		9E7AA2A124B65E7200F2DC5F /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
+		9E7AA2A424B66DBA00F2DC5F /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		9E7AA2A524B66DBA00F2DC5F /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		9E7AA2A824B7BDAA00F2DC5F /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
+		9E7AA2A924B7BDAA00F2DC5F /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
 		E4CEC939064363C394148CE2 /* Pods-InstaClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.debug.xcconfig"; path = "Target Support Files/Pods-InstaClone/Pods-InstaClone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,7 +156,9 @@
 		9E16A3F024B3DEB000EAD8A2 /* InstaClone */ = {
 			isa = PBXGroup;
 			children = (
+				9E7AA2A324B66D6300F2DC5F /* Models */,
 				9E7AA29424B4354600F2DC5F /* View Controllers */,
+				9E7AA2A724B7BD7100F2DC5F /* Views */,
 				9E16A3F124B3DEB000EAD8A2 /* AppDelegate.h */,
 				9E16A3F224B3DEB000EAD8A2 /* AppDelegate.m */,
 				9E16A3F424B3DEB000EAD8A2 /* SceneDelegate.h */,
@@ -186,8 +197,28 @@
 				9E16A3F824B3DEB000EAD8A2 /* LoginViewController.m */,
 				9E7AA29524B4389800F2DC5F /* PostViewController.h */,
 				9E7AA29624B4389800F2DC5F /* PostViewController.m */,
+				9E7AA2A024B65E7200F2DC5F /* ComposeViewController.h */,
+				9E7AA2A124B65E7200F2DC5F /* ComposeViewController.m */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		9E7AA2A324B66D6300F2DC5F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9E7AA2A424B66DBA00F2DC5F /* Post.h */,
+				9E7AA2A524B66DBA00F2DC5F /* Post.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9E7AA2A724B7BD7100F2DC5F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9E7AA2A824B7BDAA00F2DC5F /* PostCell.h */,
+				9E7AA2A924B7BDAA00F2DC5F /* PostCell.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,8 +462,11 @@
 				9E16A3F924B3DEB000EAD8A2 /* LoginViewController.m in Sources */,
 				9E16A3F324B3DEB000EAD8A2 /* AppDelegate.m in Sources */,
 				9E16A40424B3DEB100EAD8A2 /* main.m in Sources */,
+				9E7AA2AA24B7BDAA00F2DC5F /* PostCell.m in Sources */,
+				9E7AA2A224B65E7200F2DC5F /* ComposeViewController.m in Sources */,
 				9E16A3F624B3DEB000EAD8A2 /* SceneDelegate.m in Sources */,
 				9E7AA29724B4389800F2DC5F /* PostViewController.m in Sources */,
+				9E7AA2A624B66DBA00F2DC5F /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
