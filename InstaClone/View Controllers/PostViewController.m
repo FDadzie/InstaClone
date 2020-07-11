@@ -14,9 +14,9 @@
 #import "Post.h"
 
 
-@interface PostViewController ()
+@interface PostViewController () <UITableViewDelegate, UITableViewDataSource>
 
-@property (strong, nonatomic) NSArray *gramPosts;
+@property (strong, nonatomic) NSArray<Post *> *gramPosts;
 @property (weak, nonatomic) IBOutlet UITableView *postTableView;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 @end
@@ -27,23 +27,31 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.postTableView.dataSource = self;
+    self.postTableView.delegate = self;
+    
+    [self beginRefresh:(UIRefreshControl *)_refreshControl];
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
     [self.postTableView insertSubview: self.refreshControl atIndex:0];
     
-    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-    [query whereKey:@"likesCount" lessThan:@100];
-    query.limit = 20;
+    // construct PFQuery
+    PFQuery *postQuery = [Post query];
+    [postQuery orderByDescending:@"createdAt"];
+    [postQuery includeKey:@"author"];
+    postQuery.limit = 20;
 
     // fetch data asynchronously
-    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
-        if (posts != nil) {
-            // do something with the array of object returned by the call
-        } else {
-            NSLog(@"%@", error.localizedDescription);
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
+        if (!error) {
+            // do something with the data fetched
+            self.gramPosts = posts;
+            
+        }
+        else {
+            // handle error
         }
     }];
-
 }
 
 - (void)beginRefresh:(UIRefreshControl *)refreshControl {
@@ -83,12 +91,19 @@
     }];
 }
 
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [_gramPosts count];
+}
+
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
     
-    Post *post = self.gramPosts[indexPath.row];
-    cell.postCaption.text = post.caption;
+    Post *finalPost = self.gramPosts[indexPath.row];
+    cell.postCaption.text = finalPost[@"caption"];
+    cell.postUsername.text = finalPost[@"username"];
+    
+    
     
     return cell;
 }

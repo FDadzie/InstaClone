@@ -84,14 +84,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="553" id="I9Y-iD-0Ys" customClass="PostCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="553" id="I9Y-iD-0Ys" customClass="PostCell">
                                         <rect key="frame" x="0.0" y="28" width="414" height="553"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I9Y-iD-0Ys" id="bVH-Yc-Cui">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="553"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="k9E-eD-ZOJ">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="k9E-eD-ZOJ" customClass="PFImageView">
                                                     <rect key="frame" x="20" y="39" width="374" height="292"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -120,7 +120,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="postCaption" destination="SNP-gm-emu" id="CgJ-9F-J6e"/>
-                                            <outlet property="postImage" destination="k9E-eD-ZOJ" id="Bsa-Kd-USk"/>
+                                            <outlet property="postImage" destination="k9E-eD-ZOJ" id="L1P-sm-yhf"/>
                                             <outlet property="postUsername" destination="us8-Qm-Z36" id="pbQ-1O-5LX"/>
                                             <outlet property="timeDate" destination="qpf-Ub-bW9" id="z8j-MW-AHj"/>
                                         </connections>
@@ -183,10 +183,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="didTapCancel:" destination="rkI-NN-bRH" eventType="touchUpInside" id="6dX-56-QAg"/>
+                                </connections>
                             </button>
-                            <connections>
-                                <action selector="didTapCancel:" destination="rkI-NN-bRH" id="xRb-aO-NnP"/>
-                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="KTB-EC-pc7">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6tK-YI-PPU">
@@ -194,10 +194,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Post"/>
+                                <connections>
+                                    <action selector="didTapPost:" destination="rkI-NN-bRH" eventType="touchUpInside" id="Y5L-su-5xg"/>
+                                </connections>
                             </button>
-                            <connections>
-                                <action selector="didTapPost:" destination="rkI-NN-bRH" id="p4D-Vd-hEs"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>

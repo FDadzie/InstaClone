@@ -44,19 +44,34 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
+- (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
+    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    
+    resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
+    resizeImageView.image = image;
+    
+    UIGraphicsBeginImageContext(size);
+    [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
 - (IBAction)didTapPost:(id)sender {
     NSString *readyCaption = _previewCaption.text;
+    
     [Post postUserImage:_savedPhotoEdit withCaption:readyCaption withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if(!error){
             NSLog(@"Image was posted!");
         } else {
             NSLog(@"Error posting");
         }
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self dismissViewControllerAnimated:true completion:nil];
     }];
 }
 - (IBAction)didTapCancel:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:true completion:nil];
 }
 
 /*
