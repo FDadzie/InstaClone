@@ -179,11 +179,14 @@
                     <navigationItem key="navigationItem" id="J5X-c6-Tfq">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="Jhj-dR-ffZ">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YPN-nX-ACJ">
-                                <rect key="frame" x="-23" y="-15" width="92" height="30"/>
+                                <rect key="frame" x="20" y="8.5" width="92" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Cancel"/>
                             </button>
+                            <connections>
+                                <action selector="didTapCancel:" destination="rkI-NN-bRH" id="xRb-aO-NnP"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="KTB-EC-pc7">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6tK-YI-PPU">
@@ -192,9 +195,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Post"/>
                             </button>
+                            <connections>
+                                <action selector="didTapPost:" destination="rkI-NN-bRH" id="p4D-Vd-hEs"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="previewCaption" destination="7pL-ci-wiU" id="r76-7Y-8hO"/>
                         <outlet property="previewPhoto" destination="g7Z-RM-e60" id="sbN-4b-A4F"/>
                     </connections>
                 </viewController>

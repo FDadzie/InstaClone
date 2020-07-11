@@ -38,13 +38,25 @@
     _savedPhoto = originalImage;
     _savedPhotoEdit = editedImage;
     
+    _previewPhoto.image = _savedPhotoEdit;
+    
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
-
-- (IBAction)onHomeTap:(id)sender {
-    [self dismissViewControllerAnimated:true completion:nil];
+- (IBAction)didTapPost:(id)sender {
+    NSString *readyCaption = _previewCaption.text;
+    [Post postUserImage:_savedPhotoEdit withCaption:readyCaption withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        if(!error){
+            NSLog(@"Image was posted!");
+        } else {
+            NSLog(@"Error posting");
+        }
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+}
+- (IBAction)didTapCancel:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*

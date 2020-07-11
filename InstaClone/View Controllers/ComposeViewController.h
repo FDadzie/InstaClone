@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) UIImage *savedPhoto;
 @property (strong, nonatomic) UIImage *savedPhotoEdit;
 @property (weak, nonatomic) IBOutlet UIImageView *previewPhoto;
+@property (weak, nonatomic) IBOutlet UITextView *previewCaption;
 @end
 
 NS_ASSUME_NONNULL_END

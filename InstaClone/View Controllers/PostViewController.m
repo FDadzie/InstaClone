@@ -31,6 +31,19 @@
     [self.refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
     [self.postTableView insertSubview: self.refreshControl atIndex:0];
     
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    [query whereKey:@"likesCount" lessThan:@100];
+    query.limit = 20;
+
+    // fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+        if (posts != nil) {
+            // do something with the array of object returned by the call
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
+
 }
 
 - (void)beginRefresh:(UIRefreshControl *)refreshControl {
@@ -70,15 +83,13 @@
     }];
 }
 
-- (NSInteger)tableView:(UITableView *)postTableView numberOfRowsInSection:(NSInteger)section{
-    return self.gramPosts.count;
-}
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
     
     Post *post = self.gramPosts[indexPath.row];
     cell.postCaption.text = post.caption;
+    
     return cell;
 }
 
